@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><appinfo>
+    <displayname>RandomWalk</displayname>
+    <description>Random Walk is a simple trouble ticket style process with arrows looping back to earlier steps allowing complex paths. Only a few UDA variables for testing analytics filtering by UDA.  Activity names and Arrows have non-ASCII values to  test encoding.</description>
+    <owner>AdminRole</owner>
+    <gnEmailCustomizedClassName/>
+</appinfo>

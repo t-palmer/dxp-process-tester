@@ -1,0 +1,48 @@
+{
+	"dasboardConfig": {
+		  "dashboard_count": 10,
+		  "top_panel_count": 4,  
+		  "mid_panel_count": 4,
+		  "botttom_panel_count": 10,
+		  "max_custom_chart": 10
+	},
+	"kpiList": [
+        {
+          "title": "Running Process Instance",
+          "bg_class": "well ruinProc",
+          "es_index": "pi",
+          "es_query": {"query": {"bool": {"must": [{"query_string": {"query": "*", "analyze_wildcard": true}},{"match":{"ProcessState":{"query":"Running","type":"phrase"}}},{"range": {"ProcessCreationTime": { "gte": "[[begin_time]]","lte": "[[end_time]]"}}}],"must_not": []}},"size": 0,"_source": {"excludes": []},"aggs": {}},
+          "id": 0
+        },
+        {
+          "title": "Closed Process Instance",
+          "bg_class": "well closeProc",
+          "es_index": "pi",
+          "es_query": {"query": {"bool": {"must": [{"query_string": {"query": "*", "analyze_wildcard": true}},{"match":{"ProcessState":{"query":"Closed","type":"phrase"}}},{"range": {"ProcessCreationTime": { "gte": "[[begin_time]]","lte": "[[end_time]]"}}}],"must_not": []}},"size": 0,"_source": {"excludes": []},"aggs": {}},
+          "id": 1
+        },
+        {
+          "title": "My Active  Task",
+          "bg_class": "well actvTask",
+          "es_index": "wi",
+          "es_query": {"query": {"bool": {"must": [{"query_string": {"query": "*","analyze_wildcard": true}},{"match": {"WorkItemResponsible": { "query": "[[user_name]]","type": "phrase" }}},{"range": {"WorkItemCreationTime": { "gte": "[[begin_time]]","lte": "[[end_time]]"}}}],"must_not": []}},"size": 0, "_source": {"excludes": []},"aggs": {}},
+          "id": 2
+        },
+        {
+          "title": "My Closed Task",
+          "bg_class": "well closeTask",
+          "es_index": "hist",
+          "es_query": {"size": 0,  "_source": {"excludes": []}, "aggs": {"1": {"terms": { "field": "Responsible","exclude": {"pattern": "__process"}}}},"query":{"bool": {"must": [{"query_string":{"query": "EventCodeInt:2 AND *","analyze_wildcard": true}},{"match": {"Responsible": {"query": "[[user_name]]","type": "phrase"}}},{"range": { "CreatedTime": {"gte": "[[begin_time]]", "lte": "[[end_time]]"}}}],"must_not":[]}}},
+          "id": 3
+        },        
+        {
+          "title": "Active Overdue Task",
+          "bg_class": "well overTask",
+          "es_index_a": "wi",
+          "es_index_b": "ai",
+          "es_query_a": {"query": {"bool": {"must": [{"query_string": {"query": "*","analyze_wildcard": true}},{"range": {"WorkItemCreationTime": {"gte": "[[begin_time]]","lte": "[[end_time]]"}}}],"must_not": []}},"size": 0,  "_source": {"excludes": []},"aggs": {"sample": {"terms": {"field": "WorkItemResponsible"},"aggs": {"sample": {"terms": {"field": "ProcessInstanceId","size": 10000,"order": {"_count": "desc"}}}}}}},
+          "es_query_b": {"size": 0,"query": {"bool": {"must": [{"query_string": {"analyze_wildcard": true,"query": "*"}},{"match": {"ActivityState": {"query": "Running","type": "phrase"}}},{"range": {"ActivityDueDate": {"gte": "[[begin_time]]","lte": "[[end_time]]"}}}],"must_not": []}}, "_source": {"excludes": []},"aggs": {"sample": {"filters": {"filters": {"ActivityId": {"query_string": {"analyze_wildcard": true, "query": "[[activity_id_list]]"}}}}}}},
+          "id": 4
+        }
+     ]         
+}

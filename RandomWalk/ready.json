@@ -1,0 +1,42 @@
+{
+   "users": [
+	   {
+        "userId":"alex@example.com",
+        "email":"alex@example.com",
+        "userName":"Alex Demo",
+        "password":"Fujitsu1",
+         "manager":"dennis@example.com"
+       },
+       {
+        "userId":"betty@example.com",
+        "email":"betty@example.com",
+        "userName":"Betty Demo",
+        "password":"Fujitsu1",
+        "manager":"dennis@example.com"
+       },
+       {
+        "userId":"charles@example.com",
+        "email":"charles@example.com",
+        "userName":"Charles Demo",
+        "password":"Fujitsu1",
+        "manager":"dennis@example.com"
+       },
+       {
+        "userId":"dennis@example.com",
+        "email":"dennis@example.com",
+        "userName":"Dennis Demo",
+        "password":"Fujitsu1"
+       }
+   ],
+   "groups": [
+      {
+        "groupId":"DemoUsers",
+        "members": [
+          "alex@example.com",
+          "betty@example.com",
+          "charles@example.com",
+		  "dennis@example.com"
+        ]
+      }     
+   ]
+}

@@ -1,0 +1,67 @@
+{
+	"dashboard": {
+	  "dashboardName": "Default Dashboard",
+	  "dashboardId": "dashboard1",
+	  "panelLayout": {
+		"top": {
+		  "show": true,
+		  "panel": [
+                {
+                  "id": 0
+                },
+                {
+                  "id": 2
+                }
+              ]
+		},
+		"middle": {
+		  "panel": [
+                {                  
+                  "width": "4",
+                  "height": "2",
+                  "name": "Number Of Activities By Name",
+                  "id": "PieActivityName"
+                },
+                {
+                  "width": "4",
+                  "height": "2",
+                  "name": "All Running Process Lead Time",
+                  "id": "RunningProcessLeadTime"
+                },
+                {
+                  "width": "4",
+                  "height": "2",
+                  "name": "The total number of all running processes started within the time period",
+                  "id": "TachometerForRunningProcessCount"
+                },
+                {
+                  "width": "4",
+                  "height": "2",
+                  "name": "Number Of Running Processes By Day",
+                  "id": "DailyRunningProcessReport"
+                }
+              ]
+		},
+		"bottom": {
+		  "show": true,
+		  "panel": [
+			 	{
+                  "id": "AvgRunningActivityTime"
+                },
+                {
+                  "id": "AllProcessRunningTime"
+                },
+                {
+                  "id": "AvgRunningTimeForAllRunningProcesses"
+                },
+                {
+                  "id": "HourlyOpenedProcessCountChart"
+                },
+                {
+                  "id": "RunningProcessLeadTime"
+                }
+		  ]
+		}
+	  }
+	}     
+}

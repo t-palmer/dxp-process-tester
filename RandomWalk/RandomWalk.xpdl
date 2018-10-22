@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://www.wfmc.org/2008/XPDL2.1" xmlns:deprecated="http://www.wfmc.org/2002/XPDL1.0" xmlns:ibpm="http://fujitsu.com/ibpm1" xmlns:xpdl="http://www.wfmc.org/2008/XPDL2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="266" Name="RandomWalk" xsi:schemaLocation="http://www.wfmc.org/2008/XPDL2.1 http://www.wfmc.org/standards/docs/bpmnxpdl_31.xsd">
+    <PackageHeader>
+        <XPDLVersion>2.1</XPDLVersion>
+        <Vendor>Fujitsu</Vendor>
+        <Created>Mon May 28 22:07:30 PDT 2018</Created>
+    </PackageHeader>
+    <RedefinableHeader PublicationStatus="UNDER_TEST"/>
+    <Script Type="text/javascript"/>
+    <Participants>
+        <Participant Id="admin" Name="admin">
+            <ParticipantType Type="RESOURCE"/>
+        </Participant>
+        <Participant Id="DemoUsers" Name="DemoUsers">
+            <ParticipantType Type="ROLE"/>
+        </Participant>
+    </Participants>
+    <Pages>
+        <Page Id="1"/>
+    </Pages>
+    <Pools>
+        <Pool BoundaryVisible="false" Id="Pool1" Name="" Orientation="HORIZONTAL" Process="266">
+            <Lanes/>
+            <NodeGraphicsInfos>
+                <NodeGraphicsInfo Height="405.0" PageId="1" ToolId="InterstageBusinessProcessManager" Width="667.0">
+                    <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+                </NodeGraphicsInfo>
+            </NodeGraphicsInfos>
+        </Pool>
+    </Pools>
+    <Associations/>
+    <Artifacts/>
+    <WorkflowProcesses>
+        <WorkflowProcess AccessLevel="PUBLIC" Id="266" Name="RandomWalk">
+            <ProcessHeader DurationUnit="s">
+                <Description>Five tasks that can be accessed in any order, includes two JSON type UDAs</Description>
+                <Priority>8</Priority>
+            </ProcessHeader>
+            <RedefinableHeader PublicationStatus="UNDER_TEST">
+                <Author>admin</Author>
+                <Version>3.0</Version>
+                <Responsibles>
+                    <Responsible>admin</Responsible>
+                </Responsibles>
+            </RedefinableHeader>
+            <DataFields>
+                <DataField Id="Purpose" IsArray="false" Name="Purpose">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="STRING"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="Region" IsArray="false" Name="Region">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="ExposedField">
+                            <ibpm:ExposedField uniqueName="Region">
+                                <Cubes/>
+                                <Dimension/>
+                            </ibpm:ExposedField>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="IsWorkItemUDA" Value="TRUE">
+                            <ibpm:IsWorkItemUDA Value="TRUE"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="STRING"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="Product" IsArray="false" Name="Product">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="ExposedField">
+                            <ibpm:ExposedField uniqueName="Product">
+                                <Cubes/>
+                                <Dimension/>
+                            </ibpm:ExposedField>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="IsWorkItemUDA" Value="TRUE">
+                            <ibpm:IsWorkItemUDA Value="TRUE"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="STRING"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="CustomerType" IsArray="false" Name="Customer Type">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="ExposedField">
+                            <ibpm:ExposedField uniqueName="CustomerType">
+                                <Cubes/>
+                                <Dimension/>
+                            </ibpm:ExposedField>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="IsWorkItemUDA" Value="TRUE">
+                            <ibpm:IsWorkItemUDA Value="TRUE"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="STRING"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="jsonRecord" IsArray="false" Name="jsonRecord">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                    <InitialValue>{"a":1,"b":2}</InitialValue>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="ExposedField">
+                            <ibpm:ExposedField uniqueName="jsonRecord">
+                                <Cubes/>
+                                <Dimension/>
+                            </ibpm:ExposedField>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="IsWorkItemUDA" Value="TRUE">
+                            <ibpm:IsWorkItemUDA Value="TRUE"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="IsTrackable" Value="TRUE">
+                            <ibpm:IsTrackable Value="TRUE"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="STRING"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="jsonArray" IsArray="false" Name="jsonArray">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                    <InitialValue>["New York","Boston"]</InitialValue>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="ExposedField">
+                            <ibpm:ExposedField uniqueName="jsonArray">
+                                <Cubes/>
+                                <Dimension/>
+                            </ibpm:ExposedField>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="IsWorkItemUDA" Value="TRUE">
+                            <ibpm:IsWorkItemUDA Value="TRUE"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="IsTrackable" Value="TRUE">
+                            <ibpm:IsTrackable Value="TRUE"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="STRING"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="TimeToStart" IsArray="false" Name="TimeToStart">
+                    <DataType>
+                        <BasicType Type="DATETIME"/>
+                    </DataType>
+                    <InitialValue>0</InitialValue>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="IsWorkItemUDA" Value="TRUE">
+                            <ibpm:IsWorkItemUDA Value="TRUE"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="DATE"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="uda1" IsArray="false" Name="__atmr_Assess SituationDue Date_time">
+                    <DataType>
+                        <BasicType Type="INTEGER"/>
+                    </DataType>
+                    <InitialValue>3600000</InitialValue>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="LONG"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="uda2" IsArray="false" Name="__atmr_Assess SituationDue Date_actionset">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                    <InitialValue>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;JavaActionSet javaActionCount="0" name=""&gt;&#13;
+    &lt;Description/&gt;&#13;
+&lt;/JavaActionSet&gt;&#13;
+</InitialValue>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="STRING"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="__atmr_InvestigateDueDate_time" IsArray="false" Name="__atmr_Investigate (調査)Due Date_time">
+                    <DataType>
+                        <BasicType Type="INTEGER"/>
+                    </DataType>
+                    <InitialValue>3600000</InitialValue>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="LONG"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="uda3" IsArray="false" Name="__atmr_Investigate (調査)Due Date_actionset">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                    <InitialValue>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;JavaActionSet javaActionCount="0" name=""&gt;&#13;
+    &lt;Description/&gt;&#13;
+&lt;/JavaActionSet&gt;&#13;
+</InitialValue>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="STRING"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="__atmr_AddrQuicklyDueDate_time" IsArray="false" Name="__atmr_Addrèșș QuicklyDue Date_time">
+                    <DataType>
+                        <BasicType Type="INTEGER"/>
+                    </DataType>
+                    <InitialValue>10800000</InitialValue>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="LONG"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="uda4" IsArray="false" Name="__atmr_Addrèșș QuicklyDue Date_actionset">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                    <InitialValue>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;JavaActionSet javaActionCount="0" name=""&gt;&#13;
+    &lt;Description/&gt;&#13;
+&lt;/JavaActionSet&gt;&#13;
+</InitialValue>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="STRING"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="__atmr_AddrFullyDueDate_time" IsArray="false" Name="__atmr_Addrèșș FullyDue Date_time">
+                    <DataType>
+                        <BasicType Type="INTEGER"/>
+                    </DataType>
+                    <InitialValue>21600000</InitialValue>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="LONG"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="uda5" IsArray="false" Name="__atmr_Addrèșș FullyDue Date_actionset">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                    <InitialValue>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;JavaActionSet javaActionCount="0" name=""&gt;&#13;
+    &lt;Description/&gt;&#13;
+&lt;/JavaActionSet&gt;&#13;
+</InitialValue>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="STRING"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="__ptmr_Timer1_actionset" IsArray="false" Name="__ptmr_Timer1_actionset">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                    <InitialValue>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;JavaActionSet javaActionCount="1" name=""&gt;&#13;
+    &lt;Description/&gt;&#13;
+    &lt;JavaAction name="script_act_1527570810664" ordinal="0"&gt;&#13;
+        &lt;Description&gt;This action evaluates javascript.&lt;/Description&gt;&#13;
+        &lt;CatchException&gt;false&lt;/CatchException&gt;&#13;
+        &lt;ExceptionQualifiers&gt;&#13;
+            &lt;ExceptionQualifier&gt;java.lang.Exception&lt;/ExceptionQualifier&gt;&#13;
+        &lt;/ExceptionQualifiers&gt;&#13;
+        &lt;CompensateJavaActionSet/&gt;&#13;
+        &lt;ErrorJavaActionSet/&gt;&#13;
+        &lt;TechDescription/&gt;&#13;
+        &lt;FactoryClassName&gt;TIMER&lt;/FactoryClassName&gt;&#13;
+        &lt;ClassName&gt;com.fujitsu.iflow.actions.IflowActions&lt;/ClassName&gt;&#13;
+        &lt;ClassPath/&gt;&#13;
+        &lt;MethodName&gt;evaluateScript(String,String,ServerEnactmentContext)&lt;/MethodName&gt;&#13;
+        &lt;InputUDAList&gt;&#13;
+            &lt;E&gt;"uda.DaysRunning = uda.DaysRunning + 1;"&lt;/E&gt;&#13;
+            &lt;E&gt;"script_act_1527570810664"&lt;/E&gt;&#13;
+            &lt;E&gt;sec&lt;/E&gt;&#13;
+        &lt;/InputUDAList&gt;&#13;
+        &lt;AbortSequenceOnError&gt;false&lt;/AbortSequenceOnError&gt;&#13;
+        &lt;BeanName/&gt;&#13;
+        &lt;BeanMethodName/&gt;&#13;
+        &lt;BeanMethodInputUDAList/&gt;&#13;
+        &lt;ReturnUDA/&gt;&#13;
+        &lt;EditorClassName&gt;com.fujitsu.iflow.gui.actioneditor.ScriptActionEditor&lt;/EditorClassName&gt;&#13;
+    &lt;/JavaAction&gt;&#13;
+&lt;/JavaActionSet&gt;&#13;
+</InitialValue>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="STRING"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="__ptmr_Timer1_time" IsArray="false" Name="__ptmr_Timer1_time">
+                    <DataType>
+                        <BasicType Type="INTEGER"/>
+                    </DataType>
+                    <InitialValue>86400000</InitialValue>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="LONG"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="DaysRunning" IsArray="false" Name="DaysRunning">
+                    <DataType>
+                        <BasicType Type="INTEGER"/>
+                    </DataType>
+                    <InitialValue>0</InitialValue>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="INTEGER"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+                <DataField Id="__usedWithLists" IsArray="false" Name="__usedWithLists">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                    <InitialValue>Region,Product,Customer Type,jsonRecord,jsonArray,TimeToStart</InitialValue>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="IflowDataType">
+                            <ibpm:IflowDataType Type="STRING"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                </DataField>
+            </DataFields>
+            <ActivitySets/>
+            <Activities>
+                <Activity Id="295" Name="Start">
+                    <Event>
+                        <StartEvent Trigger="None"/>
+                    </Event>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Split Type="XOR">
+                                <TransitionRefs>
+                                    <TransitionRef Id="307"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="NodeType" Value="0"/>
+                        <ExtendedAttribute Name="Associations">
+                            <ibpm:Associations/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Artifacts">
+                            <ibpm:Artifacts/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Coordinates">
+                            <ibpm:Coordinates xpos="81" ypos="115"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="60.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="60.0">
+                            <Coordinates XCoordinate="50.0" YCoordinate="85.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="296" Name="Assess Situation">
+                    <Implementation>
+                        <No/>
+                    </Implementation>
+                    <Performer>DemoUsers</Performer>
+                    <Performers>
+                        <Performer>DemoUsers</Performer>
+                    </Performers>
+                    <Priority>-1</Priority>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="XOR">
+                                <TransitionRefs>
+                                    <TransitionRef Id="308"/>
+                                    <TransitionRef Id="309"/>
+                                    <TransitionRef Id="310"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="NodeType" Value="2"/>
+                        <ExtendedAttribute Name="ExpandGroups" Value="true"/>
+                        <ExtendedAttribute Name="EnableFutureWorkItems" Value="false"/>
+                        <ExtendedAttribute Name="RecallDisabled" Value="false"/>
+                        <ExtendedAttribute Name="Simulation">
+                            <ibpm:Simulation>
+                                <Duration>3600000</Duration>
+                                <Resources/>
+                                <Connectors>
+                                    <Connector Name="Full Path" Probability="0.0"/>
+                                    <Connector Name="Qüick Påth" Probability="100.0"/>
+                                    <Connector Name="Give Up" Probability="0.0"/>
+                                </Connectors>
+                            </ibpm:Simulation>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Associations">
+                            <ibpm:Associations/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Artifacts">
+                            <ibpm:Artifacts/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Coordinates">
+                            <ibpm:Coordinates xpos="269" ypos="118"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="TimerDefSet">
+                            <ibpm:TimerDefSet>
+                                <DUEDATETIMERDEF Id="303" ordinal="0" time="__atmr_Assess SituationDue Date_time" timerTimeExpression="" type="0">
+                                    <Label>Assess SituationDue Date</Label>
+                                    <TimerActions>
+                                        <ExecuteJavaActionSetAction javaActionSet="__atmr_Assess SituationDue Date_actionset" ordinal="0"/>
+                                    </TimerActions>
+                                </DUEDATETIMERDEF>
+                            </ibpm:TimerDefSet>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="68.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="102.0">
+                            <Coordinates XCoordinate="216.0" YCoordinate="84.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="297" Name="Investigate (調査)">
+                    <Implementation>
+                        <No/>
+                    </Implementation>
+                    <Performer>DemoUsers</Performer>
+                    <Performers>
+                        <Performer>DemoUsers</Performer>
+                    </Performers>
+                    <Priority>-1</Priority>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="XOR">
+                                <TransitionRefs>
+                                    <TransitionRef Id="311"/>
+                                    <TransitionRef Id="312"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="NodeType" Value="2"/>
+                        <ExtendedAttribute Name="ExpandGroups" Value="true"/>
+                        <ExtendedAttribute Name="EnableFutureWorkItems" Value="false"/>
+                        <ExtendedAttribute Name="RecallDisabled" Value="false"/>
+                        <ExtendedAttribute Name="Simulation">
+                            <ibpm:Simulation>
+                                <Duration>3600000</Duration>
+                                <Resources/>
+                                <Connectors>
+                                    <Connector Name="Back to Assess" Probability="0.0"/>
+                                    <Connector Name="Ready to Address" Probability="100.0"/>
+                                </Connectors>
+                            </ibpm:Simulation>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Associations">
+                            <ibpm:Associations/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Artifacts">
+                            <ibpm:Artifacts/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Coordinates">
+                            <ibpm:Coordinates xpos="485" ypos="118"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="TimerDefSet">
+                            <ibpm:TimerDefSet>
+                                <DUEDATETIMERDEF Id="304" ordinal="0" time="__atmr_Investigate (調査)Due Date_time" timerTimeExpression="" type="0">
+                                    <Label>Investigate (調査)Due Date</Label>
+                                    <TimerActions>
+                                        <ExecuteJavaActionSetAction javaActionSet="__atmr_Investigate (調査)Due Date_actionset" ordinal="0"/>
+                                    </TimerActions>
+                                </DUEDATETIMERDEF>
+                            </ibpm:TimerDefSet>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="68.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="102.0">
+                            <Coordinates XCoordinate="432.0" YCoordinate="84.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="298" Name="Addrèșș Quickly">
+                    <Implementation>
+                        <No/>
+                    </Implementation>
+                    <Performer>DemoUsers</Performer>
+                    <Performers>
+                        <Performer>DemoUsers</Performer>
+                    </Performers>
+                    <Priority>-1</Priority>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="XOR">
+                                <TransitionRefs>
+                                    <TransitionRef Id="313"/>
+                                    <TransitionRef Id="314"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="NodeType" Value="2"/>
+                        <ExtendedAttribute Name="ExpandGroups" Value="true"/>
+                        <ExtendedAttribute Name="EnableFutureWorkItems" Value="false"/>
+                        <ExtendedAttribute Name="RecallDisabled" Value="false"/>
+                        <ExtendedAttribute Name="Simulation">
+                            <ibpm:Simulation>
+                                <Duration>3600000</Duration>
+                                <Resources/>
+                                <Connectors>
+                                    <Connector Name="Full Path" Probability="0.0"/>
+                                    <Connector Name="Completed" Probability="100.0"/>
+                                </Connectors>
+                            </ibpm:Simulation>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Associations">
+                            <ibpm:Associations/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Artifacts">
+                            <ibpm:Artifacts/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Coordinates">
+                            <ibpm:Coordinates xpos="269" ypos="250"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="TimerDefSet">
+                            <ibpm:TimerDefSet>
+                                <DUEDATETIMERDEF Id="305" ordinal="0" time="__atmr_Addrèșș QuicklyDue Date_time" timerTimeExpression="" type="0">
+                                    <Label>Addrèșș QuicklyDue Date</Label>
+                                    <TimerActions>
+                                        <ExecuteJavaActionSetAction javaActionSet="__atmr_Addrèșș QuicklyDue Date_actionset" ordinal="0"/>
+                                    </TimerActions>
+                                </DUEDATETIMERDEF>
+                            </ibpm:TimerDefSet>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="68.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="102.0">
+                            <Coordinates XCoordinate="216.0" YCoordinate="216.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="299" Name="Gave Up">
+                    <Event>
+                        <EndEvent/>
+                    </Event>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="NodeType" Value="1"/>
+                        <ExtendedAttribute Name="Associations">
+                            <ibpm:Associations/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Artifacts">
+                            <ibpm:Artifacts/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Coordinates">
+                            <ibpm:Coordinates xpos="667" ypos="294"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="66.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="66.0">
+                            <Coordinates XCoordinate="636.0" YCoordinate="264.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="300" Name="Addrèșș Fully">
+                    <Implementation>
+                        <No/>
+                    </Implementation>
+                    <Performer>DemoUsers</Performer>
+                    <Performers>
+                        <Performer>DemoUsers</Performer>
+                    </Performers>
+                    <Priority>-1</Priority>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="XOR">
+                                <TransitionRefs>
+                                    <TransitionRef Id="315"/>
+                                    <TransitionRef Id="316"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="NodeType" Value="2"/>
+                        <ExtendedAttribute Name="ExpandGroups" Value="true"/>
+                        <ExtendedAttribute Name="EnableFutureWorkItems" Value="false"/>
+                        <ExtendedAttribute Name="RecallDisabled" Value="false"/>
+                        <ExtendedAttribute Name="Simulation">
+                            <ibpm:Simulation>
+                                <Duration>3600000</Duration>
+                                <Resources/>
+                                <Connectors>
+                                    <Connector Name="Give Up" Probability="0.0"/>
+                                    <Connector Name="Completed" Probability="100.0"/>
+                                </Connectors>
+                            </ibpm:Simulation>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Associations">
+                            <ibpm:Associations/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Artifacts">
+                            <ibpm:Artifacts/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Coordinates">
+                            <ibpm:Coordinates xpos="485" ypos="297"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="TimerDefSet">
+                            <ibpm:TimerDefSet>
+                                <DUEDATETIMERDEF Id="306" ordinal="0" time="__atmr_Addrèșș FullyDue Date_time" timerTimeExpression="" type="0">
+                                    <Label>Addrèșș FullyDue Date</Label>
+                                    <TimerActions>
+                                        <ExecuteJavaActionSetAction javaActionSet="__atmr_Addrèșș FullyDue Date_actionset" ordinal="0"/>
+                                    </TimerActions>
+                                </DUEDATETIMERDEF>
+                            </ibpm:TimerDefSet>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="68.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="102.0">
+                            <Coordinates XCoordinate="432.0" YCoordinate="263.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="301" Name="Review (温習)">
+                    <Implementation>
+                        <No/>
+                    </Implementation>
+                    <Performer>DemoUsers</Performer>
+                    <Performers>
+                        <Performer>DemoUsers</Performer>
+                    </Performers>
+                    <Priority>-1</Priority>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="XOR">
+                                <TransitionRefs>
+                                    <TransitionRef Id="317"/>
+                                    <TransitionRef Id="318"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="NodeType" Value="2"/>
+                        <ExtendedAttribute Name="ExpandGroups" Value="true"/>
+                        <ExtendedAttribute Name="EnableFutureWorkItems" Value="false"/>
+                        <ExtendedAttribute Name="RecallDisabled" Value="false"/>
+                        <ExtendedAttribute Name="Simulation">
+                            <ibpm:Simulation>
+                                <Duration>3600000</Duration>
+                                <Resources/>
+                                <Connectors>
+                                    <Connector Name="Re-assess 帰る" Probability="100.0"/>
+                                    <Connector Name="All Done" Probability="0.0"/>
+                                </Connectors>
+                            </ibpm:Simulation>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Associations">
+                            <ibpm:Associations/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Artifacts">
+                            <ibpm:Artifacts/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Coordinates">
+                            <ibpm:Coordinates xpos="365" ypos="405"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="68.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="102.0">
+                            <Coordinates XCoordinate="312.0" YCoordinate="371.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="302" Name="Done">
+                    <Event>
+                        <EndEvent/>
+                    </Event>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="NodeType" Value="1"/>
+                        <ExtendedAttribute Name="Associations">
+                            <ibpm:Associations/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Artifacts">
+                            <ibpm:Artifacts/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="Coordinates">
+                            <ibpm:Coordinates xpos="595" ypos="402"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="66.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="66.0">
+                            <Coordinates XCoordinate="564.0" YCoordinate="372.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="IntermediateEvent1" Name="Assess Situation_Full Path">
+                    <Event>
+                        <IntermediateEvent Implementation="Other" Target="296" Trigger="None"/>
+                    </Event>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="18.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="18.0">
+                            <Coordinates XCoordinate="309.0" YCoordinate="109.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="IntermediateEvent2" Name="Assess Situation_Qüick Påth">
+                    <Event>
+                        <IntermediateEvent Implementation="Other" Target="296" Trigger="None"/>
+                    </Event>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="18.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="18.0">
+                            <Coordinates XCoordinate="258.0" YCoordinate="143.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="IntermediateEvent3" Name="Assess Situation_Give Up">
+                    <Event>
+                        <IntermediateEvent Implementation="Other" Target="296" Trigger="None"/>
+                    </Event>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="18.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="18.0">
+                            <Coordinates XCoordinate="224.0" YCoordinate="75.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="IntermediateEvent4" Name="Investigate (調査)_Back to Assess">
+                    <Event>
+                        <IntermediateEvent Implementation="Other" Target="297" Trigger="None"/>
+                    </Event>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="18.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="18.0">
+                            <Coordinates XCoordinate="457.0" YCoordinate="75.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="IntermediateEvent5" Name="Investigate (調査)_Ready to Address">
+                    <Event>
+                        <IntermediateEvent Implementation="Other" Target="297" Trigger="None"/>
+                    </Event>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="18.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="18.0">
+                            <Coordinates XCoordinate="474.0" YCoordinate="143.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="IntermediateEvent6" Name="Addrèșș Quickly_Full Path">
+                    <Event>
+                        <IntermediateEvent Implementation="Other" Target="298" Trigger="None"/>
+                    </Event>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="18.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="18.0">
+                            <Coordinates XCoordinate="292.0" YCoordinate="207.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="IntermediateEvent7" Name="Addrèșș Quickly_Completed">
+                    <Event>
+                        <IntermediateEvent Implementation="Other" Target="298" Trigger="None"/>
+                    </Event>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="18.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="18.0">
+                            <Coordinates XCoordinate="309.0" YCoordinate="241.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="IntermediateEvent8" Name="Addrèșș Fully_Give Up">
+                    <Event>
+                        <IntermediateEvent Implementation="Other" Target="300" Trigger="None"/>
+                    </Event>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="18.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="18.0">
+                            <Coordinates XCoordinate="525.0" YCoordinate="288.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="IntermediateEvent9" Name="Addrèșș Fully_Completed">
+                    <Event>
+                        <IntermediateEvent Implementation="Other" Target="300" Trigger="None"/>
+                    </Event>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="18.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="18.0">
+                            <Coordinates XCoordinate="423.0" YCoordinate="288.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="IntermediateEvent10" Name="Review (温習)_Re-assess 帰る">
+                    <Event>
+                        <IntermediateEvent Implementation="Other" Target="301" Trigger="None"/>
+                    </Event>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="18.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="18.0">
+                            <Coordinates XCoordinate="303.0" YCoordinate="396.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+                <Activity Id="IntermediateEvent11" Name="Review (温習)_All Done">
+                    <Event>
+                        <IntermediateEvent Implementation="Other" Target="301" Trigger="None"/>
+                    </Event>
+                    <NodeGraphicsInfos>
+                        <NodeGraphicsInfo FillColor="light blue" Height="18.0" IsVisible="true" PageId="1" ToolId="InterstageBusinessProcessManager" Width="18.0">
+                            <Coordinates XCoordinate="405.0" YCoordinate="396.0"/>
+                        </NodeGraphicsInfo>
+                    </NodeGraphicsInfos>
+                </Activity>
+            </Activities>
+            <Transitions>
+                <Transition From="295" Id="307" Name="." To="296">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="StartPoint">
+                            <ibpm:StartPoint xpos="116" ypos="118"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="EndPoint">
+                            <ibpm:EndPoint xpos="216" ypos="118"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <ConnectorGraphicsInfos>
+                        <ConnectorGraphicsInfo FillColor="light blue" IsVisible="true" PageId="1">
+                            <Coordinates XCoordinate="116.0" YCoordinate="118.0"/>
+                            <Coordinates XCoordinate="216.0" YCoordinate="118.0"/>
+                        </ConnectorGraphicsInfo>
+                    </ConnectorGraphicsInfos>
+                </Transition>
+                <Transition From="296" Id="308" Name="Full Path" To="297">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="StartPoint">
+                            <ibpm:StartPoint xpos="318" ypos="118"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="EndPoint">
+                            <ibpm:EndPoint xpos="432" ypos="118"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <ConnectorGraphicsInfos>
+                        <ConnectorGraphicsInfo FillColor="light blue" IsVisible="true" PageId="1">
+                            <Coordinates XCoordinate="318.0" YCoordinate="118.0"/>
+                            <Coordinates XCoordinate="432.0" YCoordinate="118.0"/>
+                        </ConnectorGraphicsInfo>
+                    </ConnectorGraphicsInfos>
+                </Transition>
+                <Transition From="296" Id="309" Name="Qüick Påth" To="298">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="StartPoint">
+                            <ibpm:StartPoint xpos="267" ypos="152"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="EndPoint">
+                            <ibpm:EndPoint xpos="267" ypos="216"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <ConnectorGraphicsInfos>
+                        <ConnectorGraphicsInfo FillColor="light blue" IsVisible="true" PageId="1">
+                            <Coordinates XCoordinate="267.0" YCoordinate="152.0"/>
+                            <Coordinates XCoordinate="267.0" YCoordinate="216.0"/>
+                        </ConnectorGraphicsInfo>
+                    </ConnectorGraphicsInfos>
+                </Transition>
+                <Transition From="296" Id="310" Name="Give Up" To="299">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="StartPoint">
+                            <ibpm:StartPoint xpos="233" ypos="84"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="EndPoint">
+                            <ibpm:EndPoint xpos="669" ypos="264"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="ViewerScript">
+                            <ibpm:ViewerScript Value="233,39,669,39"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <ConnectorGraphicsInfos>
+                        <ConnectorGraphicsInfo FillColor="light blue" IsVisible="true" PageId="1">
+                            <Coordinates XCoordinate="233.0" YCoordinate="84.0"/>
+                            <Coordinates XCoordinate="233.0" YCoordinate="39.0"/>
+                            <Coordinates XCoordinate="669.0" YCoordinate="39.0"/>
+                            <Coordinates XCoordinate="669.0" YCoordinate="264.0"/>
+                        </ConnectorGraphicsInfo>
+                    </ConnectorGraphicsInfos>
+                </Transition>
+                <Transition From="297" Id="311" Name="Back to Assess" To="296">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="StartPoint">
+                            <ibpm:StartPoint xpos="466" ypos="84"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="EndPoint">
+                            <ibpm:EndPoint xpos="267" ypos="84"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="ViewerScript">
+                            <ibpm:ViewerScript Value="466,60,267,60"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <ConnectorGraphicsInfos>
+                        <ConnectorGraphicsInfo FillColor="light blue" IsVisible="true" PageId="1">
+                            <Coordinates XCoordinate="466.0" YCoordinate="84.0"/>
+                            <Coordinates XCoordinate="466.0" YCoordinate="60.0"/>
+                            <Coordinates XCoordinate="267.0" YCoordinate="60.0"/>
+                            <Coordinates XCoordinate="267.0" YCoordinate="84.0"/>
+                        </ConnectorGraphicsInfo>
+                    </ConnectorGraphicsInfos>
+                </Transition>
+                <Transition From="297" Id="312" Name="Ready to Address" To="300">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="StartPoint">
+                            <ibpm:StartPoint xpos="483" ypos="152"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="EndPoint">
+                            <ibpm:EndPoint xpos="483" ypos="263"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <ConnectorGraphicsInfos>
+                        <ConnectorGraphicsInfo FillColor="light blue" IsVisible="true" PageId="1">
+                            <Coordinates XCoordinate="483.0" YCoordinate="152.0"/>
+                            <Coordinates XCoordinate="483.0" YCoordinate="263.0"/>
+                        </ConnectorGraphicsInfo>
+                    </ConnectorGraphicsInfos>
+                </Transition>
+                <Transition From="298" Id="313" Name="Full Path" To="297">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="StartPoint">
+                            <ibpm:StartPoint xpos="301" ypos="216"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="EndPoint">
+                            <ibpm:EndPoint xpos="432" ypos="135"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <ConnectorGraphicsInfos>
+                        <ConnectorGraphicsInfo FillColor="light blue" IsVisible="true" PageId="1">
+                            <Coordinates XCoordinate="301.0" YCoordinate="216.0"/>
+                            <Coordinates XCoordinate="432.0" YCoordinate="135.0"/>
+                        </ConnectorGraphicsInfo>
+                    </ConnectorGraphicsInfos>
+                </Transition>
+                <Transition From="298" Id="314" Name="Completed" To="301">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="StartPoint">
+                            <ibpm:StartPoint xpos="318" ypos="250"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="EndPoint">
+                            <ibpm:EndPoint xpos="346" ypos="371"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="ViewerScript">
+                            <ibpm:ViewerScript Value="346,250"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <ConnectorGraphicsInfos>
+                        <ConnectorGraphicsInfo FillColor="light blue" IsVisible="true" PageId="1">
+                            <Coordinates XCoordinate="318.0" YCoordinate="250.0"/>
+                            <Coordinates XCoordinate="346.0" YCoordinate="250.0"/>
+                            <Coordinates XCoordinate="346.0" YCoordinate="371.0"/>
+                        </ConnectorGraphicsInfo>
+                    </ConnectorGraphicsInfos>
+                </Transition>
+                <Transition From="300" Id="315" Name="Give Up" To="299">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="StartPoint">
+                            <ibpm:StartPoint xpos="534" ypos="297"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="EndPoint">
+                            <ibpm:EndPoint xpos="636" ypos="297"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <ConnectorGraphicsInfos>
+                        <ConnectorGraphicsInfo FillColor="light blue" IsVisible="true" PageId="1">
+                            <Coordinates XCoordinate="534.0" YCoordinate="297.0"/>
+                            <Coordinates XCoordinate="636.0" YCoordinate="297.0"/>
+                        </ConnectorGraphicsInfo>
+                    </ConnectorGraphicsInfos>
+                </Transition>
+                <Transition From="300" Id="316" Name="Completed" To="301">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="StartPoint">
+                            <ibpm:StartPoint xpos="432" ypos="297"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="EndPoint">
+                            <ibpm:EndPoint xpos="380" ypos="371"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="ViewerScript">
+                            <ibpm:ViewerScript Value="380,297"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <ConnectorGraphicsInfos>
+                        <ConnectorGraphicsInfo FillColor="light blue" IsVisible="true" PageId="1">
+                            <Coordinates XCoordinate="432.0" YCoordinate="297.0"/>
+                            <Coordinates XCoordinate="380.0" YCoordinate="297.0"/>
+                            <Coordinates XCoordinate="380.0" YCoordinate="371.0"/>
+                        </ConnectorGraphicsInfo>
+                    </ConnectorGraphicsInfos>
+                </Transition>
+                <Transition From="301" Id="317" Name="Re-assess 帰る" To="296">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="StartPoint">
+                            <ibpm:StartPoint xpos="312" ypos="405"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="EndPoint">
+                            <ibpm:EndPoint xpos="216" ypos="135"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="ViewerScript">
+                            <ibpm:ViewerScript Value="165,405,165,135"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <ConnectorGraphicsInfos>
+                        <ConnectorGraphicsInfo FillColor="light blue" IsVisible="true" PageId="1">
+                            <Coordinates XCoordinate="312.0" YCoordinate="405.0"/>
+                            <Coordinates XCoordinate="165.0" YCoordinate="405.0"/>
+                            <Coordinates XCoordinate="165.0" YCoordinate="135.0"/>
+                            <Coordinates XCoordinate="216.0" YCoordinate="135.0"/>
+                        </ConnectorGraphicsInfo>
+                    </ConnectorGraphicsInfos>
+                </Transition>
+                <Transition From="301" Id="318" Name="All Done" To="302">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="StartPoint">
+                            <ibpm:StartPoint xpos="414" ypos="405"/>
+                        </ExtendedAttribute>
+                        <ExtendedAttribute Name="EndPoint">
+                            <ibpm:EndPoint xpos="564" ypos="405"/>
+                        </ExtendedAttribute>
+                    </ExtendedAttributes>
+                    <ConnectorGraphicsInfos>
+                        <ConnectorGraphicsInfo FillColor="light blue" IsVisible="true" PageId="1">
+                            <Coordinates XCoordinate="414.0" YCoordinate="405.0"/>
+                            <Coordinates XCoordinate="564.0" YCoordinate="405.0"/>
+                        </ConnectorGraphicsInfo>
+                    </ConnectorGraphicsInfos>
+                </Transition>
+            </Transitions>
+            <ExtendedAttributes xmlns:ibpm="http://fujitsu.com/ibpm1">
+                <ExtendedAttribute Name="JSON_OBJECT" Value="jsonRecord"/>
+                <ExtendedAttribute Name="JSON_ARRAY" Value="jsonArray"/>
+                <ExtendedAttribute Name="SWIM_LANES">
+                    <ibpm:SWIM_LANES/>
+                </ExtendedAttribute>
+                <ExtendedAttribute Name="Associations">
+                    <ibpm:Associations/>
+                </ExtendedAttribute>
+                <ExtendedAttribute Name="Artifacts">
+                    <ibpm:Artifacts/>
+                </ExtendedAttribute>
+                <ExtendedAttribute Name="SameSubPlanVersion" Value="false"/>
+                <ExtendedAttribute Name="ProcessDefinitionId" Value="266"/>
+                <ExtendedAttribute Name="ProcessTypeId" Value="0"/>
+                <ExtendedAttribute Name="State" Value="0"/>
+                <ExtendedAttribute Name="TemplateIdentifier" Value="System"/>
+                <ExtendedAttribute Name="TimerDefSet">
+                    <ibpm:TimerDefSet>
+                        <TimerDef Id="319" ordinal="0" time="__ptmr_Timer1_time" timerTimeExpression="" type="2">
+                            <Label>CountTheDays</Label>
+                            <Description>This is a global process repeats every day and increments a counter by one</Description>
+                            <TimerActions>
+                                <ExecuteJavaActionSetAction javaActionSet="__ptmr_Timer1_actionset" ordinal="0"/>
+                            </TimerActions>
+                        </TimerDef>
+                    </ibpm:TimerDefSet>
+                </ExtendedAttribute>
+                <ExtendedAttribute Name="StartingMultiProcessDisabled" Value="false"/>
+            </ExtendedAttributes>
+        </WorkflowProcess>
+    </WorkflowProcesses>
+    <ExtendedAttributes>
+        <ExtendedAttribute Name="Build" Value="11.4 IF1141010"/>
+        <ExtendedAttribute Name="System" Value="INTERSTAGEBPMFlow"/>
+    </ExtendedAttributes>
+</Package>
